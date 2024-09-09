@@ -1,44 +1,45 @@
-T = int(input())  # 테스트 케이스 수 입력
-
-# + 방향 벡터 (상, 하, 좌, 우)
+T = int(input())
+          # 우, 하, 좌, 상
 dr_plus = [0, 1, 0, -1]
 dc_plus = [1, 0, -1, 0]
-
-# x 방향 벡터 (대각선 방향)
-dr_cross = [1, 1, -1, -1]
-dc_cross = [1, -1, -1, 1]
+      # 우하, 좌하, 좌상, 우상
+dr_x = [1, 1, -1, -1]
+dc_x = [1, -1, -1, 1]
 
 for tc in range(1, T+1):
-    N, M = map(int, input().split())  # N: 배열 크기, M: 분사 범위
-    arr = [list(map(int, input().split())) for _ in range(N)]  # N x N 배열 입력
+    N, M = map(int, input().split()) # N: 배열의 크기 M: 스프레이 분사 크기
 
-    max_kill = 0  # 최대 죽인 수 초기화
+    flies= [list(map(int, input().split())) for _ in range(N)]
 
-    # 모든 칸에서 + 형태와 x 형태로 분사 시뮬레이션
+    max_kill = 0
+
+    # + 형태로 분사
     for r in range(N):
         for c in range(N):
-            kill_plus = arr[r][c]  # + 방향으로 죽인 수
-            kill_x = arr[r][c]     # x 방향으로 죽인 수
+            kill_plus = flies[r][c]
+            kill_x = flies[r][c]
 
-            # 4방향에 대해 M-1만큼의 범위 체크 (자기 자신 칸 제외)
+            # 4방향에 대해 체크
             for d in range(4):
-                for i in range(1, M):
+                for i in range(1, M): # m 만큼 분사
                     # + 방향 이동
                     nr = r + dr_plus[d] * i
                     nc = c + dc_plus[d] * i
 
-                    # x 방향 이동 (대각선)
-                    ni = r + dr_cross[d] * i
-                    nj = c + dc_cross[d] * i
+                    # x 방향 이동
+                    ni = r + dr_x[d] * i
+                    nj = c + dc_x[d] * i
 
-                    # 배열의 범위 안에 있는지 확인 후 더하기
+                    # 배열의 범위 안에 있다면 값을 더해주기
                     if 0 <= nr < N and 0 <= nc < N:
-                        kill_plus += arr[nr][nc]
+                        kill_plus += flies[nr][nc]
+
                     if 0 <= ni < N and 0 <= nj < N:
-                        kill_x += arr[ni][nj]
+                        kill_x += flies[ni][nj]
 
-            # 최대 죽인 수 갱신
-            max_kill = max(kill_plus, kill_x, max_kill)
+            # 최댓값 갱신
+            max_kill = max(max_kill, kill_plus, kill_x)
 
-    # 테스트 케이스 결과 출력
+
     print(f'#{tc} {max_kill}')
+
