@@ -1,10 +1,10 @@
 # [level 0] a와 b 출력하기 - 181951 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181951) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181951?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 32.4 MB, 시간: 46.64 ms
+메모리: 49.7 MB, 시간: 248.02 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 09월 24일 23:34:34
+2025년 06월 18일 03:28:43
 
 ### 문제 설명
 
