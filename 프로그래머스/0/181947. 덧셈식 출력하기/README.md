@@ -1,10 +1,10 @@
 # [level 0] 덧셈식 출력하기 - 181947 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181947) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181947?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 4.2 MB, 시간: 3.11 ms
+메모리: 51.6 MB, 시간: 233.40 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 10월 03일 23:30:21
+2025년 08월 19일 15:07:01
 
 ### 문제 설명
 
